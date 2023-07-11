@@ -43,12 +43,12 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="mb-3">
       <input
         type="text"
         placeholder="First Name"
         {...register("fullName", { required: true })}
-        className={`border p-2 w-full mb-2 ${
+        className={`border p-2 w-full mb-3 ${
           errors.fullName ? "border-red-500" : ""
         }`}
       />
@@ -58,7 +58,7 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
         type="email"
         placeholder="Email"
         {...register("email", { required: true })}
-        className={`border p-2 w-full mb-2 ${
+        className={`border p-2 w-full mb-3 ${
           errors.email ? "border-red-500" : ""
         }`}
       />
@@ -68,7 +68,7 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
         type="text"
         placeholder="Phone No"
         {...register("phone", { required: true, pattern: /^[0-9]+$/ })}
-        className={`border p-2 w-full mb-2 ${
+        className={`border p-2 w-full mb-3 ${
           errors.phone ? "border-red-500" : ""
         }`}
       />
