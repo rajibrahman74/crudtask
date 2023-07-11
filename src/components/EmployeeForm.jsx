@@ -1,5 +1,6 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import Button from "./Button";
 
 const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
@@ -29,6 +30,15 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
         salary: data.salary,
       };
       onAddItem(updatedItem);
+      reset(); // Reset the form fields after update data
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Employee data updated successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } else {
       const newItem = {
         fullName: data.fullName,
@@ -37,9 +47,17 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
         salary: data.salary,
       };
       onAddItem(newItem);
-    }
+      reset(); // Reset the form fields
 
-    reset(); // Reset the form fields
+      // Show SweetAlert2 pop-up for successful addition the new employee data
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Employee data has been added successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   };
 
   return (
@@ -94,7 +112,9 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
 
       <Button
         type="submit"
-        name={editIndex !== null ? "Update Item" : "Add Item"}
+        name={
+          editIndex !== null ? "Update Employee Data" : "Add New Employee Data"
+        }
       />
     </form>
   );
