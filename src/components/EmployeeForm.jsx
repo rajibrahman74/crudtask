@@ -62,7 +62,7 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
           errors.email ? "border-red-500" : ""
         }`}
       />
-      {errors.email && <p className="text-red-500">Email is required</p>}
+      {errors.email && <p className="text-red-500">Email required or exist</p>}
 
       <input
         type="text"
@@ -74,7 +74,7 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
       />
       {errors.phone && (
         <p className="text-red-500">
-          Phone is required and should contain only numbers
+          Phone is required or exist (add number only)
         </p>
       )}
 
