@@ -21,6 +21,7 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
     }
   }, [employee, setValue]);
 
+  // function for submit form data
   const onSubmit = (data) => {
     if (editIndex !== null) {
       const updatedItem = {

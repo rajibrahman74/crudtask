@@ -7,6 +7,8 @@ const Employee = () => {
   const [employeeItems, setEmployeeItems] = useState([]);
   const [editIndex, setEditIndex] = useState(null);
 
+
+  // Function for handling add new value and update previous value
   const handleAddItem = (item) => {
     if (editIndex !== null) {
       const updatedItems = [...employeeItems];
@@ -18,10 +20,12 @@ const Employee = () => {
     }
   };
 
+  // function for manaage edit item
   const handleEditItem = (index) => {
     setEditIndex(index);
   };
 
+  // function for delete item
   const handleDeleteItem = (index) => {
     Swal.fire({
       title: "Are you sure?",
@@ -45,6 +49,7 @@ const Employee = () => {
   return (
     <div className="mx-auto">
       <h1 className="text-2xl font-bold mb-3 text-white">New Employee</h1>
+      {/* EmployeeFrom components */}
       <EmployeeForm
         onAddItem={handleAddItem}
         editIndex={editIndex}
@@ -78,6 +83,7 @@ const Employee = () => {
                   key={index}
                   className="bg-gray-300 border border-grey-500 md:border-none block md:table-row"
                 >
+                  {/* EmployeItem components */}
                   <EmployeeItem
                     item={item}
                     onEdit={() => handleEditItem(index)}
