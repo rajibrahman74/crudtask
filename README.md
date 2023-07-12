@@ -1,4 +1,4 @@
-# CURD TASK
+# CRUD TASK
 
 Welcome to my awesome project!
 
