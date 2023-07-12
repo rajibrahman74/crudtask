@@ -61,7 +61,10 @@ const EmployeeForm = ({ onAddItem, editIndex, employee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mb-3">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="mb-3 w-full md:w-2/5 mx-auto"
+    >
       <input
         type="text"
         placeholder="First Name"
